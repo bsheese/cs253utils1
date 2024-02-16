@@ -6,6 +6,8 @@ def calculate(current_value, num, clear):
     if clear:
         return ''  # Clear the current value if clear button is pressed
     elif num:
+        if num == 'sqrt':
+            return math.sqrt(current_value)
         if num == '=':
             # Calculate result if '=' is pressed
             try:
