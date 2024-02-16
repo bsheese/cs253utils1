@@ -21,15 +21,17 @@ def calc():
 
     return render_template('calc.html', current_value=current_value)
 
+
 @app.route('/wordstats', methods=['GET', 'POST'])
 def wordstatsindex():
     if request.method == 'POST':
         user_string = request.form['user_string']
         average_length = wordstats.average_length(user_string)
-
-        return render_template('wordstats.html', average_length=average_length)
+        longest_word = wordstats.longest_word(user_string)
+        return render_template('wordstats.html', average_length=average_length, longest_word=longest_word)
     else:
         return render_template('wordstats.html', average_length=None)
+
 
 if __name__ == '__main__':
     app.run()
