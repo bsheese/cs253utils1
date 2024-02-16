@@ -5,3 +5,17 @@ def average_length(user_string):
     else:
         avg = 0
     return avg
+
+
+def longest_word(user_string):
+    words = user_string.split()
+    if words:
+        long_word_so_far = words[0]
+        for word in words:
+            if len(word) > len(long_word_so_far):
+                long_word_so_far = word
+            else:
+                pass
+        return long_word_so_far
+    else:
+        return "No words found"
